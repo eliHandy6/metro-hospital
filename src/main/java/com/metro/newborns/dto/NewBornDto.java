@@ -3,10 +3,12 @@ package com.metro.newborns.dto;
 import com.metro.newborns.entities.NewBorn;
 import com.metro.newborns.enums.NewBornGender;
 import com.metro.newborns.enums.MartialStatus;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.ReadOnlyProperty;
 
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
@@ -23,7 +25,7 @@ import java.time.LocalDate;
 @Builder
 public class NewBornDto {
 
-
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Long unique_id;
 
     @NotEmpty
